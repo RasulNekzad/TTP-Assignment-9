@@ -11,7 +11,8 @@ const Credits = ({ credits, accountsBalance, setCredits }) => {
             <h2>{credits}</h2>
             <form onSubmit={e => {
                     e.preventDefault();
-                    setCredits(credits + parseInt(e.target.credits.value));
+                    const { credits: newCredits } = e.target
+                    setCredits(credits + parseInt(newCredits.value));
                 }}>
                 <input type="text" name="credits" placeholder="Add Credits"/>
                 <button type="submit">Add</button>

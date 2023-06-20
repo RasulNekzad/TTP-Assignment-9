@@ -11,7 +11,8 @@ const Debits = ({ debits, setDebits, accountsBalance }) => {
             <h2>{debits}</h2>
             <form onSubmit={e => {
                     e.preventDefault();
-                    setDebits(debits + parseInt(e.target.debits.value));
+                    const { debits: newDebits } = e.target
+                    setDebits(debits + parseInt(newDebits.value));
                 }}>
                 <input type="text" name="debits" placeholder="Add Debits"/>
                 <button type="submit">Add</button>
