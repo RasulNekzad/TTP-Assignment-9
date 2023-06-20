@@ -36,7 +36,7 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/home">Home</Link>
             </li>
             <li>
               <Link to="/debits">Debits</Link>
@@ -48,9 +48,9 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/" element={<Home debits={debits} credits={credits} accountBalance={accountBalance}/>}></Route>
           <Route path="/debits" element={<Debits debits={debits} accountsBalance={accountBalance} setDebits={setDebits}/>}></Route>
           <Route path="/credits" element={<Credits credits={credits} accountsBalance={accountBalance} setCredits={setCredits}/>}>s</Route>
+          <Route path="/*" element={<Home debits={debits} credits={credits} accountBalance={accountBalance}/>}></Route>
         </Routes>
       </div>
     </Router>
