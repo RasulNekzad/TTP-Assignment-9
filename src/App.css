@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -39,4 +40,11 @@
 
 li {
   list-style: none;
+  font-size: larger;
+  font-weight: bold;
+  margin: 5px;
+}
+
+h2 {
+  font-weight: 500;
 }
