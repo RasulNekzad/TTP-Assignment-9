@@ -10,6 +10,8 @@ function App() {
   const [debits, setDebits] = useState(0);
     const [credits, setCredits] = useState(0);
     const [accountBalance, setAccountBalance] = useState(0);
+    const [debitsDescription, setDebitsDescription] = useState("");
+    const [creditsDescription, setCreditsDescription] = useState("");
 
     async function fetchDebits() {
         const result = await axios.get("https://bank-of-react-b745wfs0u-ajlapid718.vercel.app/debits");
@@ -48,9 +50,9 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/debits" element={<Debits debits={debits} accountsBalance={accountBalance} setDebits={setDebits}/>}></Route>
-          <Route path="/credits" element={<Credits credits={credits} accountsBalance={accountBalance} setCredits={setCredits}/>}>s</Route>
-          <Route path="/*" element={<Home debits={debits} credits={credits} accountBalance={accountBalance}/>}></Route>
+          <Route path="/debits" element={<Debits debits={debits} accountsBalance={accountBalance} setDebits={setDebits} debitsDescription={debitsDescription} setDebitsDescription={setDebitsDescription}/>}></Route>
+          <Route path="/credits" element={<Credits credits={credits} accountsBalance={accountBalance} setCredits={setCredits} creditsDescription={creditsDescription} setCreditsDescription={setCreditsDescription}/>}></Route>
+          <Route path="/*" element={<Home debits={debits} credits={credits} accountBalance={accountBalance} debitsDescription={debitsDescription} creditsDescription={creditsDescription}/>}></Route>
         </Routes>
       </div>
     </Router>
